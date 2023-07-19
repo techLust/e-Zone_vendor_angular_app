@@ -1,7 +1,13 @@
 header{
-    background-color: lightblue;
-    color: black;
+    background-color: #1976d2;
+    color: white;
+        font-size: 1.1rem;
+
+}
+header span{
+    color: white;
 }
 a{
     cursor: pointer;
+
 }
