@@ -28,15 +28,12 @@ export class SigninComponent {
 
   onUserSignIn(){
     console.log("Sign in clicked")
-    // console.log('Signin component',
-    // this.email = this.signInForm.get('email')?.value,
-    // this.password = this.signInForm.get('password')?.value
-    // )
     console.log(this.signInForm.value)
     this.service.signIn(this.signInForm.value).subscribe((res:any) => {
       console.log("Login response", res)
       if(res){
         localStorage.setItem('userToken', res.token)
+        localStorage.setItem('vendorId', res.data._id)
 
       }      
       this.router.navigate(['/dashboard'])

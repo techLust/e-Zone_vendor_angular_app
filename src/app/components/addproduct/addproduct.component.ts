@@ -51,6 +51,7 @@ export class AddproductComponent {
     formData.append('productDescription', formDetails.productDescription)
     formData.append('productPrice', formDetails.productPrice)
     formData.append('productComments', formDetails.productComments)
+    formData.append('quantity', formDetails.productQuantity)
 
     this.service.addProduct(formData, token).subscribe((res:any) => {
       console.log("Product response", res)

@@ -12,6 +12,10 @@ export class VendorService {
     private http: HttpClient,
   ) { }
 
+getVendor(){
+  
+}
+
 signUp(userData:any){
   console.log("Service data", userData)
 return this.http.post(`${environment.API_ENDPOINT}/vendor/signup`, userData)

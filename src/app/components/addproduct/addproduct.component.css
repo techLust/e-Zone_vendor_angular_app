@@ -1,0 +1,27 @@
+.add_product_form{
+    margin: 1rem;
+}
+
+.add_product_container{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add_product_heading, .add_product_btn{
+    display: flex;
+    justify-content: center
+}
+
+.add_product_heading p{
+    /* color: red; */
+    font-size: 2rem;
+    /* font-weight: 500; */
+}
+
+input[type="text"]{
+    border: 1px solid black;
+  }

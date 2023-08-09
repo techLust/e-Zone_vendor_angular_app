@@ -1,147 +1,141 @@
 <div>
-
-    <h2>Add product</h2>
-  
   <form
-    class="w-full max-w-lg"
+    class="add_product_form"
     #productForm="ngForm"
     (ngSubmit)="onProductAdd(productForm.value)"
     enctype="multipart/form-data"
   >
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productName"
-        >
-          Product Name
-        </label>
-        <input
-          class=""
-          type="text"
-          name="productName"
-          placeholder="Enter product name"
-          ngModel
-        />
+  <div class="add_product_heading">
+    <p>Add product</p>
+  </div>
+
+    <div class="add_product_container">
+      <div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productName"> Product Name </label>
+            <input
+              class=""
+              type="text"
+              name="productName"
+              placeholder="Enter product name"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productCategory"> Product Category </label>
+            <select name="productCategory" ngModel>
+              <option>Select category</option>
+              <option value="cosmetics_beauty">Cosmetics & Beauty</option>
+              <option value="Clothes">Clothes</option>
+              <option value="Music">Music</option>
+              <option value="Games">Games</option>
+              <option value="technology">Technology</option>
+              <option value="business">Business</option>
+              <option value="health">Health</option>
+              <option value="travel">Travel</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productFreshness"> Product Freshness </label>
+            <input
+              type="radio"
+              name="productFreshness"
+              value="Brand New"
+              ngModel
+            />
+            <label for="brand_new">New</label>
+            <input
+              type="radio"
+              name="productFreshness"
+              value="Second Hand"
+              ngModel
+            />
+            <label for="second_hand">Second Hand</label>
+            <input
+              type="radio"
+              name="productFreshness"
+              value="Refurbished"
+              ngModel
+            />
+            <label for="refurbished">Refurbished</label>
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productImage"> Product Image </label>
+            <input
+              class=""
+              type="file"
+              placeholder="Enter product image"
+              name="productImage"
+              ngModel
+              (change)="onFileSelected($event)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productQuantity"> Product quantity </label>
+            <input
+              class=""
+              type="text"
+              placeholder="Enter product quantity"
+              name="productQuantity"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productDescription">
+              Product Description
+            </label>
+            <input
+              class=""
+              type="text"
+              placeholder="Enter product description"
+              name="productDescription"
+              ngModel
+            />
+            
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productPrice"> Product Price </label>
+            <input
+              class=""
+              type="text"
+              placeholder="Enter product price"
+              name="productPrice"
+              ngModel
+            />
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label class="" for="productComment"> Additionl Comments </label>
+            <input
+              class=""
+              type="text"
+              placeholder="Enter product comments"
+              name="productComments"
+              ngModel
+            />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productCategory"
-        >
-          Product Category
-        </label>
-        <select name="productCategory" ngModel>
-          <option value="Select_product">Select category</option>
-          <option value="cosmetics_beauty">Cosmetics & Beauty</option>
-          <option value="Music">Music</option>
-          <option value="Games">Games</option>
-          <option value="technology">Technology</option>
-          <option value="business">Business</option>
-          <option value="health">Health</option>
-          <option value="travel">Travel</option>
-        </select>
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productFreshness"
-        >
-          Product Freshness
-        </label>
-        <input type="radio" name="productFreshness" value="Brand New" ngModel />
-        <label for="brand_new">Brand New</label>
-        <input
-          type="radio"
-          name="productFreshness"
-          value="Second Hand"
-          ngModel
-        />
-        <label for="second_hand">Second Hand</label>
-        <input
-          type="radio"
-          name="productFreshness"
-          value="Refurbished"
-          ngModel
-        />
-        <label for="refurbished">Refurbished</label>
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productImage"
-        >
-          Product Image
-        </label>
-        <input
-          class=""
-          type="file"
-          placeholder="Enter product image"
-          name="productImage"
-          ngModel
-          (change)="onFileSelected($event)"
-        />
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productDescription"
-        >
-          Product Description
-        </label>
-        <textarea
-          class=""
-          type="text"
-          placeholder="Enter product description"
-          name="productDescription"
-          ngModel
-        >
-        </textarea>
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productPrice"
-        >
-          Product Price
-        </label>
-        <input
-          class=""
-          type="text"
-          placeholder="Enter product price"
-          name="productPrice"
-          ngModel
-        />
-      </div>
-    </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <label
-          class=""
-          for="productComment"
-        >
-          Additionl Comments
-        </label>
-        <input
-          class=""
-          type="text"
-          placeholder="Enter product comments"
-          name="productComments"
-          ngModel
-        />
-      </div>
-    </div>
-    <div>
+
+    <div class="add_product_btn">
       <button
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         type="submit"

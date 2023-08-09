@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { VendorService } from 'src/app/services/vendor.service';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -14,12 +15,17 @@ export class NavbarComponent {
     private service:VendorService
   ){}
 
-  getAllProduct(){
-    const vendorId = localStorage.getItem("userToken")
-     console.log("Vendor Id", vendorId)
-     this.service.getProduct().subscribe((res:any) => {
-       console.log("Product", res.data)
-     })
-   }
+  // ngOnInit(){
+  //   this.getAllProduct()
+  //   console.log('Get all product called')
+  // }
+
+  // getAllProduct(){
+  //   const vendorId = localStorage.getItem("userToken")
+  //    console.log("Vendor Id", vendorId)
+  //    this.service.getProduct().subscribe((res:any) => {
+  //      console.log("Product", res.data)
+  //    })
+  //  }
 
 }
