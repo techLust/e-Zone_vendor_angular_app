@@ -1,153 +1,4 @@
-<!-- <div>
-  <form
-    class="add_product_form"
-    #productForm="ngForm"
-    (ngSubmit)="onProductAdd(productForm.value)"
-    enctype="multipart/form-data"
-  >
-    <div class="add_product_heading">
-      <p>Add product</p>
-    </div>
 
-    <div class="add_product_container">
-      <div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productName"> Product Name </label>
-            <input
-              class=""
-              type="text"
-              name="productName"
-              ngModel
-              placeholder="Enter product name"
-            />
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productCategory"> Product Category </label>
-            <select name="productCategory" ngModel>
-              <option>Select category</option>
-              <option value="cosmetics_beauty">Cosmetics & Beauty</option>
-              <option value="Clothes">Clothes</option>
-              <option value="Music">Music</option>
-              <option value="Games">Games</option>
-              <option value="technology">Technology</option>
-              <option value="business">Business</option>
-              <option value="health">Health</option>
-              <option value="travel">Travel</option>
-            </select>
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productFreshness"> Product Freshness </label>
-            <input
-              type="radio"
-              name="productFreshness"
-              value="Brand New"
-              ngModel
-            />
-            <label for="brand_new">New</label>
-            <input
-              type="radio"
-              name="productFreshness"
-              value="Second Hand"
-              ngModel
-            />
-            <label for="second_hand">Second Hand</label>
-            <input
-              type="radio"
-              name="productFreshness"
-              value="Refurbished"
-              ngModel
-            />
-            <label for="refurbished">Refurbished</label>
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productImage"> Product Image </label>
-            <input
-              class=""
-              type="file"
-              placeholder="Enter product image"
-              name="productImage"
-              ngModel
-              (change)="onFileSelected($event)"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productQuantity"> Product quantity </label>
-            <input
-              class=""
-              type="text"
-              placeholder="Enter product quantity"
-              name="productQuantity"
-              ngModel
-            />
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productDescription">
-              Product Description
-            </label>
-            <input
-              class=""
-              type="text"
-              placeholder="Enter product description"
-              name="productDescription"
-              ngModel
-            />
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productPrice"> Product Price </label>
-            <input
-              class=""
-              type="text"
-              placeholder="Enter product price"
-              name="productPrice"
-              ngModel
-            />
-          </div>
-        </div>
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="" for="productComment"> Additionl Comments </label>
-            <input
-              class=""
-              type="text"
-              placeholder="Enter product comments"
-              name="productComments"
-              ngModel
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="add_product_btn">
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        type="submit"
-      >
-        Add product
-      </button>
-    </div>
-  </form>
-</div> -->
-
-<!-- *********************************************************** -->
-
-<!-- <div class="flex justify-center"> -->
 <form
   class="w-full p-6"
   #productForm="ngForm"
@@ -187,6 +38,8 @@
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-last-name"
             type="text"
+            name="brand"
+            ngModel
             placeholder="Brand"
           />
         </div>
@@ -203,6 +56,8 @@
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-password"
             type="text"
+            name="description"
+            ngModel
             placeholder="Product description"
           />
         </div>
@@ -219,6 +74,8 @@
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-city"
             type="text"
+            name="quantity"
+            ngModel
             placeholder="Quantity"
           />
         </div>
@@ -231,11 +88,12 @@
           </label>
           <div class="relative">
             <select
-              ngModel
               class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-state"
+              name="category"
+              ngModel
             >
-              <option>Select category</option>
+              <option >Select category</option>
               <option>Clothes</option>
               <option>Electronics</option>
               <option>Medicine</option>
@@ -267,6 +125,8 @@
             class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             id="grid-zip"
             type="text"
+            name="price"
+            ngModel
             placeholder="90210"
           />
         </div>
@@ -278,10 +138,11 @@
           <div class="flex items-center mb-4">
             <input
               id="country-option-1"
-              type="radio"
-              name="countries"
-              value="USA"
               class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700"
+              type="radio"
+              name="freshness"
+              value="new"
+              ngModel
               checked
             />
             <label
@@ -294,11 +155,12 @@
 
           <div class="flex items-center mb-4 pl-5">
             <input
+              class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
               id="country-option-2"
               type="radio"
-              name="countries"
-              value="Germany"
-              class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+              name="freshness"
+              value="refurbished"
+              ngModel
             />
             <label
               for="country-option-2"
@@ -319,6 +181,8 @@
           id="message"
           rows="4"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-200 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+          name="comment"
+          ngModel
           placeholder="Leave a comment..."
         ></textarea>
       </div>
@@ -327,7 +191,7 @@
     <div class="flex items-center justify-center w-full">
       <label
         for="dropzone-file"
-        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+        class="flex flex-col items-center justify-center w-full h-96 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
       >
         <div class="flex flex-col items-center justify-center">
           <svg
@@ -352,7 +216,14 @@
             SVG, PNG, JPG or GIF (MAX. 800x400px)
           </p>
         </div>
-        <input id="dropzone-file" type="file" class="hidden" />
+        <input
+          id="dropzone-file"
+          class="hidden"
+          type="file"
+          name="image"
+          ngModel
+          (change)="onFileSelected($event)"
+        />
       </label>
     </div>
   </div>
@@ -365,4 +236,3 @@
     </button>
   </div>
 </form>
-<!-- </div> -->

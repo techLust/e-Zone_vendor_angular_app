@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { VendorService } from '../../services/vendor.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-addproduct',
@@ -16,6 +17,7 @@ export class AddproductComponent {
   constructor(
     // private formBuilder: FormBuilder,
     private service: VendorService,
+    private toastr: ToastrService
   ){
     // this.addProductForm = this.formBuilder.group({
     //   productName: '',
@@ -42,19 +44,31 @@ export class AddproductComponent {
     // console.log(this.addProductForm.value)
     const token = localStorage.getItem('userToken')
     console.log(token)
+    // success, error, info, warning take (message, title, ToastConfig) pass an options object to replace any default option.
+
 
     const formData = new FormData();
     formData.append('productName', formDetails.productName)
-    formData.append('productCategory', formDetails.productCategory)
-    formData.append('productFreshness', formDetails.productFreshness)
-    formData.append('productImage', this.file)
-    formData.append('productDescription', formDetails.productDescription)
-    formData.append('productPrice', formDetails.productPrice)
-    formData.append('productComments', formDetails.productComments)
-    formData.append('quantity', formDetails.productQuantity)
+    formData.append('brand', formDetails.productName)
+    formData.append('category', formDetails.category)
+    formData.append('freshness', formDetails.freshness)
+    formData.append('image', this.file)
+    formData.append('description', formDetails.description)
+    formData.append('price', formDetails.price)
+    formData.append('comments', formDetails.comments)
+    formData.append('quantity', formDetails.quantity)
 
     this.service.addProduct(formData, token).subscribe((res:any) => {
-      console.log("Product response", res)
+      if(res){
+        console.log("Product response", res)
+        this.toastr.success('Product added!', '', {
+          timeOut: 2000,
+        });
+      }else{
+        this.toastr.error('Product added', 'Toastr fun!', {
+          timeOut: 2000,
+        });
+      }
     })
 
   }

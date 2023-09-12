@@ -26,3 +26,7 @@ input[type="text"]{
     border: 1px solid black;
   }
 
+  .toast {
+    width: 300px; /* Set the desired width */
+    min-height: 50px; /* Set the minimum height */
+  }

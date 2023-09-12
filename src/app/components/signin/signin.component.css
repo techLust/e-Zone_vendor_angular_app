@@ -1,0 +1,27 @@
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: fl;
+    background-color: blue;
+}
+
+.signup_container,
+.login_container {
+  -webkit-clip-path: polygon(0 0, 0% 100%, 63% 0);
+  clip-path: polygon(0 0, 0% 100%, 63% 0);
+  height: 70vh;
+  width: 60vw;
+  /* background: #44caf5; */
+  border: 1px solid black;
+}
+
+/* .login_container {
+  height: 70vh;
+  width: 60vw;
+  -webkit-clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  background: #d87a0f;
+  color: black;
+} */
