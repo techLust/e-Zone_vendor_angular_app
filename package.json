@@ -21,7 +21,6 @@
     "angular-ui-swiper": "^2.3.8",
     "ngx-toastr": "^17.0.2",
     "rxjs": "~7.8.0",
-    "swiper": "^10.2.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

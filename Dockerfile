@@ -31,11 +31,11 @@ RUN  sed -i '/user  nginx;/d' /etc/nginx/nginx.conf \
 # COPY ./dockerEntryPoint/docker-entrypoint.sh /
 # ENTRYPOINT ["/docker-entrypoint.sh"]  
 # Copy the content into nginx folder
-COPY ./dist/vertikalitiFirebase /usr/share/nginx/
+COPY ./dist/angular_vendor /usr/share/nginx/
 # copy the nginx congif file
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
-EXPOSE 8080
+EXPOSE 8000
 
 STOPSIGNAL SIGQUIT
 
